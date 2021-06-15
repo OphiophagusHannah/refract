@@ -35,18 +35,34 @@
 //             });
 //         });
 
-$(document).ready(function() {
-    var scroll_start = 0;
-    var startchange = $('#startchange');
-    var offset = startchange.offset();
-    if (startchange.length) {
-        $(document).scroll(function() {
-            scroll_start = $(this).scrollTop();
-            if (scroll_start > offset.top) {
-                $("nav a").css('color', 'blue ');
-            } else {
-                $('nav a').css('color', 'white');
-            }
-        });
-    }
+$(document).ready(function () {
+    // var scroll_start = 0;
+    // var startchange = $('#startchange');
+    // var offset = startchange.offset();
+    // if (startchange.length) {
+    //     $(document).scroll(function () {
+    //         scroll_start = $(this).scrollTop();
+    //         if (scroll_start > offset.top) {
+    //             $("nav a").css('color', 'blue ');
+    //         } else {
+    //             $('nav a').css('color', 'white');
+    //         }
+    //     });
+    // }
+
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+
+        //>=, not <=
+        if (scroll >= 500) {
+            //clearHeader, not clearheader - caps H
+            $("nav").addClass("scrolled");
+
+        }
+        else {
+            s
+            $("nav").removeClass("scrolled");
+        }
+    }); //missing );
 });
+
